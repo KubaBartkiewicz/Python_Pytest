@@ -1,0 +1,2 @@
+class ClubNotSetException(Exception):
+    pass

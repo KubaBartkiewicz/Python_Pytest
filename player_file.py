@@ -1,4 +1,5 @@
 from random import choice
+from exceptions import ClubNotSetException
 
 
 class Player:
@@ -45,7 +46,7 @@ class Player:
         if self._club is not None:
             self._goals += 1
         else:
-            raise Exception('Choose your club!')
+            raise ClubNotSetException('Choose your club!')
 
     def change_position(self, new_position):
         self._position = new_position
@@ -58,7 +59,7 @@ class Player:
     def foul(self):
         if choice([0, 1]):
             self._number_of_cards += 1
-            print('Got a card!')
+            #print('Got a card!')
 
 
 my_player = Player('Test Player', 'defender', 23)
